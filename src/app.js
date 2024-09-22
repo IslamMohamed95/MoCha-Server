@@ -6,7 +6,9 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 
 const userRoutes = require("../routes/user.routes"); //Route For Users (Main Model)
 const postRouter = require("../routes/posts.routes"); //Route For Posts cause it will be needed in (Admin User)
